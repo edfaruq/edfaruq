@@ -1,0 +1,108 @@
+# Nama  : Muhammad Anshar Al Faruq
+# Kelas : A
+# NIM   : 24060122140148
+
+def is_empty_LoL(S):
+    return S==[]
+L1=[]
+L2=[[]]
+L3=[['s',2,3],2,[5,'b']]
+print(is_empty_LoL(L1))
+print(is_empty_LoL(L2))
+print(is_empty_LoL(L3))
+
+
+def jml_elemen_list(S):
+    return len(S)
+L1=['a']
+L2=['b',5]
+L3=[['s',2,3],2,[5,'b']]
+print(jml_elemen_list(L1))
+print(jml_elemen_list(L2))
+print(jml_elemen_list(L3))
+
+def is_atom(S):
+    return not(is_empty_LoL(S)) and jml_elemen_list(S)==1
+L1=['a']
+L2=['b',5]
+L3=[['s',2,3],2,[5,'b']]
+print(is_atom(L1))
+print(is_atom(L2))
+print(is_atom(L3))
+
+def is_List(S):
+    return not(is_atom(S))
+L1=['a']
+L2=['b',5]
+L3=[['s',2,3],2,[5,'b']]
+print(is_List(L1))
+print(is_List(L2))
+print(is_List(L3))
+
+def konslo_LoL(L,S):
+    if is_empty_LoL(S):
+        return [L]
+    else:
+        return [L]+S
+L=[1,2,3]
+S=[3,5,[3,8]]
+print(konslo_LoL(L,S))
+
+def first_list(S):
+    if not (is_empty_LoL(S)):
+        return S[0]
+L3=[['s',2,3],2,[5,'b']]
+print(first_list(L3))
+
+def tail_List(S):
+    if not(is_empty_LoL(S)):
+        return S[1:]
+X=['a',['b,c,e']]
+print(tail_List(X))
+
+def last_List(S):
+    if not(is_empty_LoL(S)):
+        return S[-1:]
+X=[['a,b'],'e'] 
+print(last_List(X))
+
+def head_List(S):
+    if not(is_empty_LoL(S)):
+        return S[:-1]
+X=[['a,b'],'e',['d,c']]
+print(head_List(S))
+
+#S1=[['a']]
+#S2=[['a']]
+#def IsEmpty(S):
+ #   return len(S) == 0
+#def IsEqs(S1,S2):
+ #   if not(IsEmpty(S1)) and IsEmpty(S2):
+  #      return False
+   # elif IsEmpty(S1) and not(IsEmpty(S2)):
+    #    return False
+    #elif not(IsEmpty(S1)) and not(IsEmpty(S2)):
+     #   return False
+    #else:
+     #   return True
+#print(IsEqs(S1==S2))
+
+def Max2(a,b):
+    if a >= b:
+        return a
+    else:
+        return b
+print(Max2(7,9))
+
+L1=['2,8,9']
+L2=['b',5]
+L3=[['s',2,3],2,[5,'b']]
+def IsOneElmt(S):
+    return len(S) == 1
+def Max(S):
+    if IsOneElmt(S):
+        if is_atom(first_list(S)):
+            return first_list(S)
+        else:
+             return Max(first_list(S))
+print(Max(L1))
